@@ -1,15 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  webpack(config:any) {
-    config.module.rules.push({
-      test: /\.svg$/,
-      issuer: /\.[jt]sx?$/,
-      use: ["@svgr/webpack"],
-    });
-    return config;
-  },
+  turbopack: {},
+
   images: {
-    domains: ["tinytales.trendline.marketing"],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "tinytales.trendline.marketing",
+      },
+    ],
   },
 };
 
