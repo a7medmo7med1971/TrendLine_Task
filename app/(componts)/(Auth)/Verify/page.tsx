@@ -7,10 +7,9 @@ import { verifyEmail } from "@/app/(componts)/Rudex/verifySlice";
 import { resendVerifyCode } from "@/app/(componts)/Rudex/ResendCode";
 
 export default function Verify() {
+  const inputsRef = useRef<Array<HTMLInputElement | null>>([]);
   const dispatch = useAppDispatch();
   const router = useRouter();
-  const inputsRef = useRef<Array<HTMLInputElement | null>>([]);
-
   const { loading, error, success } = useAppSelector(
     (state) => state.verify
   );
@@ -105,7 +104,9 @@ export default function Verify() {
           {formik.values.code.map((_, index) => (
             <input
               key={index}
-              ref={(el) => (inputsRef.current[index] = el)}
+              ref={(el) => {
+              inputsRef.current[index] = el;
+                    }}
               type="text"
               maxLength={1}
               value={formik.values.code[index]}
