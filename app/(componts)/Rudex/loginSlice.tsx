@@ -43,7 +43,7 @@ const token =
 
 const initialState:LoginState = {
   user: token
-    ? ({ token } as LoginUser) // مؤقت لحد ما نجيب البروفايل
+    ? ({ token } as LoginUser) 
     : null,
   loading: false,
   error: null,
@@ -106,13 +106,13 @@ const loginSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      //  لما الطلب يبدأ
+      
       .addCase(login.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
 
-      //  لما ينجح
+      
       .addCase(login.fulfilled, (state, action) => {
         state.loading = false;
         state.user = action.payload.data; 
@@ -120,7 +120,7 @@ const loginSlice = createSlice({
         localStorage.setItem("token", action.payload.data.token);
       })
 
-      //  لما يفشل
+     
       .addCase(login.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload as string;
