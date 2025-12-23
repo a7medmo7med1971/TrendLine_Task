@@ -1,271 +1,370 @@
-📌 Project Overview
+# Trendline E-Commerce Frontend Task
 
-This project is a modern E-Commerce Web Application built using Next.js (App Router).
-It focuses on clean UI, responsive design, authentication flow, and reusable components following best practices.
+This project is a **Frontend E-Commerce Application** built as a technical task for **Trendline**.  
+It demonstrates a complete authentication flow, product UI, user dashboard behavior, and clean, scalable frontend architecture using **Next.js**.
 
-The application includes:
+---
 
-User Authentication (Register / Login / Logout)
+## 🚀 Tech Stack
 
-Product listing & product details
+- **Next.js (App Router)**
+- **React.js**
+- **TypeScript**
+- **Redux Toolkit**
+- **Formik & Yup**
+- **Tailwind CSS**
+- **Shadcn/UI**
+- **React Hot Toast**
+- **Lucide Icons**
 
-Ratings & Reviews system
+---
 
-Similar Products slider
+## 📦 Features Implemented
 
-User Dashboard after login
+### Authentication
+- **Register**: Full Name, Email, Password, Phone, Country Code
+- **Login**: Email & Password authentication
+- **Email Verification**: OTP (6 digits)
+- **Resend Verification Code**: Token-based resend functionality
+- **Logout**: Secure session termination
+- **Token Management**: Secure storage using `localStorage`
 
-Fully responsive layout (Desktop / Tablet / Mobile)
+### User Flow
+- After successful **Login**, user is redirected to the **E-Commerce Home Page**
+- Access to a comprehensive **User Dashboard**
+- Dashboard includes:
+  - Personalized welcome message
+  - User profile information
+  - Account overview
+- Secure logout clears user data and authentication token
 
-🚀 Tech Stack
+### UI Components
+- **Responsive Header** with:
+  - Navigation menu
+  - User dropdown with profile options
+  - Language switcher (i18n ready)
+- **Product Details Page**: Full product information display
+- **Rating & Reviews Component**: Interactive review system
+- **Footer**: Pixel-perfect implementation based on Figma design
+- **Toast Notifications**: Real-time feedback for success & error states
 
-Next.js 13+ (App Router)
+---
 
-React.js
+## 📂 Project Structure
 
-TypeScript
-
-Tailwind CSS
-
-Redux Toolkit
-
-Lucide Icons
-
-ShadCN/UI
-
-Next/Image for image optimization
-
-📁 Project Structure
+```
 app/
- ├─ (auth)/
- │   ├─ Login/
- │   ├─ Register/
- │
- ├─ (ecommerce)/
- │   ├─ dashboard/
- │   ├─ products/
- │   ├─ categories/
- │
- ├─ components/
- │   ├─ Header/
- │   ├─ Footer/
- │   ├─ Rating/
- │   ├─ SimilarItems/
- │
- ├─ Redux/
- │   ├─ loginSlice.ts
- │   ├─ registerSlice.ts
- │   ├─ getUserDataSlice.ts
- │   ├─ store.ts
- │
-public/
- ├─ assets/
-
-🔐 Authentication Flow
-1️⃣ Register
-
-Full Name
-
-Email
-
-Password
-
-Phone Number
-
-Country Code
-
-2️⃣ Login
-
-Email
-
-Password
-
-Token stored in localStorage
-
-User data stored in Redux Store
-
-3️⃣ After Login Behavior ✅
-
-User is redirected automatically to the E-Commerce Dashboard
-
-Dashboard displays:
-
-Welcome message
-
-User name
-
-User information
-
-Access to products & features
-
-4️⃣ Logout
-
-Clears:
-
-Redux state
-
-User data
-
-Token from localStorage
-
-Redirects user back to Login page
-
-🧭 User Dashboard
-
-After successful login, the user is redirected to:
-
-/dashboard
-
-Dashboard Features:
-
-Welcome message (e.g. "Welcome back, Ahmed!")
-
-User profile information
-
-Personalized user experience
-
-Entry point to the e-commerce flow
-
-🧩 Header Component
-
-Logo
-
-Navigation links
-
-Icons (Wishlist, Cart)
-
-Language dropdown
-
-User dropdown:
-
-Login
-
-Register
-
-Logout (handled via Redux)
-
-Mobile version includes:
-
-Slide menu using Sheet component
-
-🦶 Footer Component
-
-Background image with overlay
-
-Company description
-
-Help links
-
-Policy links
-
-Email subscription input
-
-Social media icons (Lucide)
-
-Fully responsive and centered layout
-
-⭐ Rating & Reviews System
-
-Overall rating score
-
-Rating bars (1–5 stars)
-
-Total reviews count
-
-Add comment button
-
-Reviews list with:
-
-User name
-
-Rating stars
-
-Comment
-
-Date
-
-Layout is fully responsive and aligned using flex & grid.
-
-🔁 Similar Items Slider
-
-Displays related products
-
-Custom slider logic (no external libraries)
-
-Navigation buttons
-
-Product cards include:
-
-Image
-
-Category
-
-Rating
-
-Price & discount
-
-Color options
-
-🖼️ Image Handling
-
-Uses Next/Image
-
-All local images start with /
-
-Uses:
-
-fill for responsive images
-
-Optimized loading & performance
-
-📱 Responsive Design
-
-Mobile-first approach
-
-Tailwind breakpoints:
-
-sm
-
-md
-
-lg
-
-xl
-
-Layouts adapt smoothly across all devices
-
-🧠 Best Practices Applied
-
-Reusable components
-
-Clean folder structure
-
-Centralized state management
-
-Separation of concerns
-
-Scalable and maintainable code
-
-UI matched exactly with Figma design
-
-▶️ How to Run the Project
+│
+├── (components)/
+│   ├── Auth/
+│   │   ├── LoginForm.tsx
+│   │   ├── RegisterForm.tsx
+│   │   └── VerifyEmail.tsx
+│   │
+│   ├── Header/
+│   │   ├── Header.tsx
+│   │   ├── UserDropdown.tsx
+│   │   └── LanguageSwitcher.tsx
+│   │
+│   ├── Footer/
+│   │   └── Footer.tsx
+│   │
+│   ├── ProductDetails/
+│   │   ├── ProductInfo.tsx
+│   │   ├── RatingReviews.tsx
+│   │   └── ProductGallery.tsx
+│   │
+│   └── Redux/
+│       ├── store.ts
+│       ├── slices/
+│       │   ├── loginSlice.ts
+│       │   ├── registerSlice.ts
+│       │   ├── verifySlice.ts
+│       │   └── resendVerifySlice.ts
+│       └── types/
+│
+├── (pages)/
+│   ├── login/
+│   ├── register/
+│   ├── verify/
+│   ├── dashboard/
+│   └── products/
+│
+├── page.tsx
+├── layout.tsx
+└── globals.css
+```
+
+---
+
+## ⚙️ Installation & Setup
+
+### 1️⃣ Prerequisites
+
+Ensure you have the following installed:
+
+- **Node.js** (v18 or higher recommended)
+- **npm** or **yarn**
+
+Check versions:
+
+```bash
+node -v
+npm -v
+```
+
+### 2️⃣ Clone the Repository
+
+```bash
+git clone https://github.com/your-username/trendline-task.git
+cd trendline-task
+```
+
+### 3️⃣ Install Dependencies
+
+```bash
 npm install
+```
+
+If you encounter permission issues on Windows:
+
+```bash
+npm install --force
+```
+
+Or use yarn:
+
+```bash
+yarn install
+```
+
+### 4️⃣ Environment Variables
+
+Create a `.env.local` file in the root directory:
+
+```env
+NEXT_PUBLIC_API_BASE_URL=your_api_base_url
+NEXT_PUBLIC_APP_ENV=development
+```
+
+### 5️⃣ Run the Development Server
+
+```bash
 npm run dev
+```
 
+The application will be available at:
 
-Then open:
-
+```
 http://localhost:3000
+```
 
-📌 Notes
+### 6️⃣ Build for Production
 
-Project UI follows the provided Figma design
+```bash
+npm run build
+npm start
+```
 
-Ready for future backend integration
+---
 
-Easy to extend (Admin Dashboard, Orders, Payments)
+## 🔐 Authentication Flow
 
-👨‍💻 Author
+### Token Management
+- API authentication uses **Bearer Token** format
+- Token is securely stored in `localStorage`
+- All protected routes validate token presence
+- Automatic token refresh mechanism (if implemented)
 
-Ahmed Mohamed Ibrahim
-Frontend Developer (React.js / Next.js)
+### Protected Actions
+The following actions require a valid authentication token:
+- Email verification
+- Resend verification code
+- Access to user dashboard
+- Logout functionality
+
+### Redux State Management
+- **Redux Toolkit** handles all async API calls using `createAsyncThunk`
+- Centralized error handling
+- Loading states for better UX
+- Persistent state management
+
+---
+
+## 🔔 Notifications System
+
+**react-hot-toast** provides real-time feedback for:
+
+- ✅ Login success
+- ✅ Registration success
+- ✅ Email verification success
+- ❌ API errors and validation failures
+- ℹ️ Information messages
+
+Toast provider is globally configured in `layout.tsx` for consistent notifications across the application.
+
+---
+
+## 🎨 UI & Design
+
+- Built based on provided **Figma Design**
+- **Pixel-perfect** implementation with accurate spacing and colors
+- **Fully responsive** design:
+  - Mobile (320px - 767px)
+  - Tablet (768px - 1023px)
+  - Desktop (1024px+)
+- **Shadcn/UI** components for consistency
+- **Tailwind CSS** for rapid styling
+- **Lucide Icons** for modern iconography
+
+---
+
+## 🧪 Form Validation
+
+### Validation Strategy
+- All forms validated using **Yup** schema validation
+- **Formik** for form state management
+- Real-time validation feedback
+- Client-side and server-side error handling
+
+### Validation Rules
+- **Email**: Valid email format required
+- **Password**: Minimum 8 characters, includes uppercase, lowercase, and numbers
+- **Phone**: Valid phone number with country code
+- **OTP**: Exactly 6 digits
+
+---
+
+## 🧠 State Management Architecture
+
+### Redux Toolkit Slices
+
+1. **loginSlice**
+   - Handles user authentication
+   - Manages login state and token storage
+
+2. **registerSlice**
+   - User registration flow
+   - Form data management
+
+3. **verifySlice**
+   - Email verification process
+   - OTP validation
+
+4. **resendVerifySlice**
+   - Resend verification code logic
+   - Rate limiting handling
+
+### Store Configuration
+- Clean separation of concerns
+- Centralized store in `store.ts`
+- Type-safe Redux hooks
+- Middleware for API calls
+
+---
+
+## 📱 Responsive Design Breakpoints
+
+```css
+/* Mobile */
+@media (max-width: 767px) { }
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) { }
+
+/* Desktop */
+@media (min-width: 1024px) { }
+```
+
+---
+
+## 🔒 Security Features
+
+- Secure token storage
+- Protected route middleware
+- Input sanitization
+- XSS protection
+- CSRF token handling (if applicable)
+- Secure logout with token invalidation
+
+---
+
+## 📌 Future Improvements
+
+### Short Term
+- [ ] Add protected routes middleware at the Next.js level
+- [ ] Implement profile edit functionality
+- [ ] Add loading skeletons for better perceived performance
+- [ ] Improve error boundary implementation
+
+### Medium Term
+- [ ] Enhanced dashboard with:
+  - Order history
+  - Wishlist management
+  - Address book
+- [ ] Add pagination for product reviews
+- [ ] Implement product search and filtering
+- [ ] Add shopping cart functionality
+
+### Long Term
+- [ ] Improve accessibility (ARIA labels, keyboard navigation)
+- [ ] Add unit and integration tests (Jest, React Testing Library)
+- [ ] Implement PWA features
+- [ ] Add internationalization (i18n) for multiple languages
+- [ ] Optimize performance (code splitting, lazy loading)
+- [ ] Add analytics tracking
+
+---
+
+## 🐛 Known Issues
+
+Currently, there are no known critical issues. Please report any bugs via GitHub Issues.
+
+
+
+## 🤝 Contributing
+
+This is a technical task project. For any suggestions or improvements, please reach out directly.
+
+---
+
+## 📄 License
+
+This project is proprietary and created as a technical assessment for Trendline Marketing Solutions.
+
+---
+
+## 👨‍💻 Author
+
+**Ahmed Mohamed**  
+Frontend Developer (React.js / Next.js)  
+---
+
+## 🏢 Company
+
+This project was developed as a **Frontend Technical Task** for:
+
+**Trendline Marketing Solutions**
+
+---
+
+## 🙏 Acknowledgments
+
+- Trendline team for the opportunity
+- Next.js team for the amazing framework
+- Shadcn for the beautiful UI components
+- Open-source community for all the tools used
+
+---
+
+## 📞 Support
+
+For questions or support regarding this project:
+
+- Open a GitHub Issue
+- Contact via email: ahmedmohamedibrahim636@gmail.com
+
+---
+
+**Last Updated**: December 2024  
+**Version**: 1.0.0
