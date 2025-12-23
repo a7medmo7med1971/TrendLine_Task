@@ -338,10 +338,6 @@ This project is proprietary and created as a technical assessment for Trendline 
 
 **Ahmed Mohamed**  
 Frontend Developer (React.js / Next.js)  
-📧 Email: your.email@example.com  
-🔗 LinkedIn: [Your LinkedIn Profile]  
-💼 GitHub: [Your GitHub Profile]
-
 ---
 
 ## 🏢 Company
