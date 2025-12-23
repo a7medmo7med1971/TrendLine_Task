@@ -50,7 +50,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2">
             <Image
-              src="/assets/logo.svg"
+              src="/assets/logoheader.png"
               alt="Tinytales"
               width={66}
               height={51}
