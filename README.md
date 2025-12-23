@@ -366,5 +366,6 @@ For questions or support regarding this project:
 
 ---
 
-**Last Updated**: December 2024  
+**Last Updated**: December 2025
+**Live Demo:https://trend-line-six.vercel.app/
 **Version**: 1.0.0
