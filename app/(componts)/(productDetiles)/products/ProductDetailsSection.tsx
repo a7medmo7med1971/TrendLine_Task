@@ -216,25 +216,33 @@ export default function ProductDetailsPage() {
             </p>
 
             <div className="flex items-center gap-10">
-              <div className="flex items-center rounded-xl bg-[#F6F6F6] px-1 overflow-hidden">
+              <div className="flex items-center gap-2 rounded-xl bg-[#F6F6F6] px-2 py-1">
                 <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
-                  className="h-[40px] w-[40px] rounded-[12px] bg-white text-xl font-medium 
-             shadow flex items-center justify-center
-             hover:bg-gray-100 transition"
+                  className="
+                          min-h-[44px] min-w-[44px]
+                          rounded-[12px] bg-white text-xl font-medium
+                          shadow flex items-center justify-center
+                          hover:bg-gray-100 active:scale-95
+                          transition
+                        "
                 >
                   −
                 </button>
 
-                <span className="px-6 py-3 min-w-[50px] text-center text-lg font-semibold">
+                <span className="px-4 py-2 min-w-[48px] text-center text-lg font-semibold">
                   {String(quantity).padStart(2, "0")}
                 </span>
 
                 <button
                   onClick={() => setQuantity(quantity + 1)}
-                  className="h-[40px] w-[40px] rounded-[12px] bg-white text-xl font-medium 
-             shadow flex items-center justify-center
-             hover:bg-gray-100 transition"
+                  className="
+                    min-h-[44px] min-w-[44px]
+                    rounded-[12px] bg-white text-xl font-medium
+                    shadow flex items-center justify-center
+                    hover:bg-gray-100 active:scale-95
+                    transition
+                  "
                 >
                   +
                 </button>
@@ -244,9 +252,31 @@ export default function ProductDetailsPage() {
                 ${(quantity * price).toFixed(2)}
               </span>
               {/* Add to Cart */}
-              <button className="w-50 bg-[#BE968E] hover:bg-[#89716c] cursor-pointer text-white py-4 rounded-xl flex items-center justify-center gap-2">
-                Add To Cart <Handbag />
-              </button>
+             <button
+              className="
+                min-h-[48px]
+                min-w-[160px]
+
+                px-6
+                py-4
+                rounded-[14px]
+
+                bg-[#BE968E]
+                hover:bg-[#89716c]
+
+                text-white text-base font-medium
+
+                flex items-center justify-center gap-2
+                shadow
+
+                transition
+                active:scale-95
+              "
+            >
+              Add To Cart
+              <Handbag className="w-5 h-5" />
+            </button>
+
             </div>
           </div>
         </div>

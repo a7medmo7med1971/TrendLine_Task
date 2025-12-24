@@ -9,6 +9,10 @@ import {
   ShoppingCart,
   User,
   Menu,
+  LogIn,
+  LayoutDashboard,
+  LogOut,
+  UserPlus,
 } from "lucide-react";
 import { ChevronDown } from "lucide-react";
 import Link from "next/link";
@@ -20,7 +24,13 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetTrigger,
+  SheetTitle,
+} from "@/components/ui/sheet";
+import { VisuallyHidden } from "@radix-ui/react-visually-hidden";
 import { useAppDispatch, useAppSelector } from "../Rudex/hooks";
 import { useRouter } from "next/navigation";
 import { logout } from "../Rudex/loginSlice";
@@ -142,10 +152,16 @@ export default function Header() {
               {!user ? (
                 <>
                   <DropdownMenuItem asChild>
-                    <Link href="/Login">Login</Link>
+                    <Link className="flex items-center gap-1" href="/Login">
+                      <LogIn className="h-5 w-5" />
+                      Login
+                    </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
-                    <Link href="/Register">Register</Link>
+                    <Link className="flex items-center gap-1" href="/Register">
+                      <UserPlus className="h-5 w-5" />
+                      Register
+                    </Link>
                   </DropdownMenuItem>
                 </>
               ) : (
@@ -154,12 +170,19 @@ export default function Header() {
                     {user.name || "My Account"}
                   </DropdownMenuItem>
                   <DropdownMenuItem>
-                    <Link href={"/dashboardUser"}>Dashboard</Link>
+                    <Link
+                      className="flex items-center gap-1"
+                      href={"/dashboardUser"}
+                    >
+                      <LayoutDashboard className="h-5 w-5" />
+                      User Dashboard
+                    </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem
                     onClick={handleLogout}
-                    className="text-red-600 cursor-pointer"
+                    className="flex items-center gap-1 text-red-600 cursor-pointer "
                   >
+                    <LogOut className="h-5 w-5" />
                     Logout
                   </DropdownMenuItem>
                 </>
@@ -177,27 +200,93 @@ export default function Header() {
               </Button>
             </SheetTrigger>
 
-            <SheetContent side="left" className="w-72">
+            <SheetContent side="left" className="w-72 p-5">
+              {/* Hidden title for accessibility */}
+              <VisuallyHidden>
+                <SheetTitle>Mobile Navigation</SheetTitle>
+              </VisuallyHidden>
+
               <div className="mb-6">
                 <Image
-                  src="/assets/logo.svg"
+                  src="/assets/logoheader.png"
                   alt="Tinytales"
-                  width={80}
-                  height={40}
+                  width={66}
+                  height={51}
                 />
               </div>
 
-              <nav className="flex flex-col gap-4 text-sm font-medium">
-                <Link href="/">Home</Link>
-                <Link href="/categories">Our Category</Link>
-                <Link href="/about">About Us</Link>
-                <Link href="/contact">Contact Us</Link>
-                <Link href="/faqs">FAQs</Link>
+              <nav className="flex flex-col gap-4 text-lg font-Poppins text-[#8A8A8A]  ">
+                <Link
+                  href="/"
+                  className="flex items-center gap-2 hover:text-yellow-900 transition"
+                >
+                  <LayoutGrid className="h-5 w-5" />
+                  Our Category
+                </Link>
+
+                <Link
+                  href="/about"
+                  className="flex items-center gap-2 hover:text-yellow-900 transition"
+                >
+                  <Info className="h-5 w-5" />
+                  About Us
+                </Link>
+
+                <Link
+                  href="/"
+                  className="flex items-center gap-2 hover:text-yellow-900 transition"
+                >
+                  <Home className="h-5 w-5" />
+                  Home
+                </Link>
+
+                <Link
+                  href="/contact"
+                  className="flex items-center gap-2 hover:text-yellow-900 transition"
+                >
+                  <Phone className="h-5 w-5" />
+                  Contact Us
+                </Link>
+
+                <Link
+                  href="/faqs"
+                  className="flex items-center gap-2 hover:text-yellow-900 transition"
+                >
+                  <HelpCircle className="h-5 w-5" />
+                  FAQs
+                </Link>
 
                 <hr className="my-4" />
 
-                <Link href="/Login">Login</Link>
-                <Link href="/Register">Register</Link>
+                {!user ? (
+                  <>
+                    <Link className="flex items-center gap-2" href="/Login">
+                      <LogIn className="h-5 w-5" />
+                      Login
+                    </Link>
+                    <Link className="flex items-center gap-2" href="/Register">
+                      <UserPlus className="h-5 w-5" />
+                      Register
+                    </Link>
+                  </>
+                ) : (
+                  <>
+                    <Link
+                      className="flex items-center gap-2"
+                      href="/dashboardUser"
+                    >
+                      <LayoutDashboard className="h-5 w-5" />
+                      User Dashboard
+                    </Link>
+                    <button
+                      onClick={handleLogout}
+                      className="flex items-center gap-2 text-left text-red-600"
+                    >
+                      <LogOut className="h-5 w-5" />
+                      Logout
+                    </button>
+                  </>
+                )}
               </nav>
             </SheetContent>
           </Sheet>

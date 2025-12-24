@@ -57,12 +57,32 @@ export default function Rating() {
       {/* Rating Summary */}
       <div className="flex flex-col lg:flex-row items-center gap-40 m-auto">
         {/* Score */}
-        <div className="flex flex-col items-center lg:items-start min-w-[140px]">
-          <div className="flex items-baseline gap-4">
-            <span className="text-6xl lg:text-9xl font-medium">4,5</span>
-            <span className="text-2xl text-gray-400">/5</span>
+          <div className="flex items-baseline gap-8">
+            <span
+              className="
+                text-[96px]
+                sm:text-[96px]
+                md:text-[96px]
+                lg:text-[96px]
+                font-medium
+                leading-none
+                whitespace-nowrap
+              "
+            >
+              4.5
+            </span>
+
+            <span
+              className="
+                text-[24px]
+                text-gray-400
+                leading-none
+              "
+            >
+              /5
+            </span>
           </div>
-        </div>
+
 
         {/* Bars */}
         <div className="w-full max-w-[520px] space-y-3">
@@ -100,7 +120,7 @@ export default function Rating() {
       </div>
 
       {/* Reviews */}
-      <div className="w-full max-w-[1500px] mx-auto space-y-8 pt-20">
+      <div className="w-full max-w-[1500px] mx-auto space-y-5 pt-20">
         {reviewsClient.map((review) => (
           <div key={review.id} className="border-b border-gray-200 pb-6">
             <div className="flex justify-between mb-3">
