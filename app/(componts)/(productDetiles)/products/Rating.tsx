@@ -55,69 +55,64 @@ export default function Rating() {
       </div>
 
       {/* Rating Summary */}
-      <div className="flex flex-col lg:flex-row items-center gap-40 m-auto">
-        {/* Score */}
-          <div className="flex items-baseline gap-8">
-            <span
-              className="
-                text-[96px]
-                sm:text-[96px]
-                md:text-[96px]
-                lg:text-[96px]
-                font-medium
-                leading-none
-                whitespace-nowrap
-              "
-            >
-              4.5
-            </span>
+      <div className="flex flex-col lg:flex-row items-center lg:items-start gap-10 w-full">
 
-            <span
-              className="
-                text-[24px]
-                text-gray-400
-                leading-none
-              "
-            >
-              /5
-            </span>
-          </div>
+  {/* Score */}
+  <div className="flex flex-col items-center lg:items-start lg:flex-1">
+    <div className="flex items-baseline gap-8">
+      <span
+        className="
+          text-[96px]
+          font-medium
+          leading-none
+          whitespace-nowrap
+        "
+      >
+        4.5
+      </span>
 
+      <span className="text-[24px] text-gray-400 leading-none">
+        /5
+      </span>
+    </div>
+  </div>
 
-        {/* Bars */}
-        <div className="w-full max-w-[520px] space-y-3">
-          {ratingData.map((rating) => (
-            <div key={rating.stars} className="flex items-center gap-3">
-              <Star className="text-[#BE968E]" fill="#BE968E" />
-              <span className="w-3 font-medium">{rating.stars}</span>
+  {/* Bars */}
+  <div className="w-full lg:flex-1 max-w-none space-y-3">
+    {ratingData.map((rating) => (
+      <div key={rating.stars} className="flex items-center gap-3">
+        <Star className="text-[#BE968E]" fill="#BE968E" />
+        <span className="w-3 font-medium">{rating.stars}</span>
 
-              <div className="flex-1 h-2 bg-gray-200 rounded-full">
-                <div
-                  className="h-full bg-[#BE968E] rounded-full"
-                  style={{ width: `${rating.percent}%` }}
-                />
-              </div>
-
-              <span className="w-12 text-[#545454] font-medium">
-                %{rating.percent}
-              </span>
-            </div>
-          ))}
+        <div className="flex-1 h-2 bg-gray-200 rounded-full">
+          <div
+            className="h-full bg-[#BE968E] rounded-full"
+            style={{ width: `${rating.percent}%` }}
+          />
         </div>
 
-        {/* Total */}
-        <div className="hidden lg:flex flex-col items-center gap-5 min-w-[200px]">
-          <div className="text-center">
-            <p className="text-sm text-[#545454] mb-2">Total Reviews</p>
-            <p className="text-6xl font-semibold">3.0K</p>
-          </div>
-
-          <Button className="bg-[#BE968E] hover:bg-[#a87f79] text-white px-12 py-6 rounded-lg">
-            Add Comment
-            <MessageSquare className="w-5 h-5 ml-2" />
-          </Button>
-        </div>
+        <span className="w-12 text-[#545454] font-medium">
+          %{rating.percent}
+        </span>
       </div>
+    ))}
+  </div>
+
+  {/* Total */}
+  <div className="hidden lg:flex flex-col items-center gap-5 lg:flex-1">
+    <div className="text-center">
+      <p className="text-sm text-[#545454] mb-2">Total Reviews</p>
+      <p className="text-6xl font-semibold">3.0K</p>
+    </div>
+
+    <Button className="bg-[#BE968E] hover:bg-[#a87f79] text-white px-12 py-6 rounded-lg cursor-pointer">
+      Add Comment
+      <MessageSquare className="w-5 h-5 ml-2" />
+    </Button>
+  </div>
+
+</div>
+
 
       {/* Reviews */}
       <div className="w-full max-w-[1500px] mx-auto space-y-5 pt-10">
@@ -148,7 +143,7 @@ export default function Rating() {
         <div className="flex justify-center pt-6">
           <Button
             variant="outline"
-            className="bg-[#F5F5F5] px-8 py-6 rounded-lg"
+            className="bg-[#F5F5F5] px-8 py-6 rounded-lg cursor-pointer"
           >
             View More Comments
           </Button>

@@ -215,17 +215,18 @@ export default function ProductDetailsPage() {
               </span>
             </p>
 
+           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-10">
+            {/* Quantity + Price */}
             <div className="flex items-center gap-10">
               <div className="flex items-center gap-2 rounded-xl bg-[#F6F6F6] px-2 py-1">
                 <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
                   className="
-                          min-h-[44px] min-w-[44px]
-                          rounded-[12px] bg-white text-xl font-medium
-                          shadow flex items-center justify-center
-                          hover:bg-gray-100 active:scale-95
-                          transition
-                        "
+                    min-h-[44px] min-w-[44px]
+                    rounded-[12px] bg-white text-xl font-medium
+                    shadow flex items-center justify-center
+                    hover:bg-gray-100 active:scale-95 transition cursor-pointer
+                  "
                 >
                   −
                 </button>
@@ -240,47 +241,44 @@ export default function ProductDetailsPage() {
                     min-h-[44px] min-w-[44px]
                     rounded-[12px] bg-white text-xl font-medium
                     shadow flex items-center justify-center
-                    hover:bg-gray-100 active:scale-95
-                    transition
+                    hover:bg-gray-100 active:scale-95 transition cursor-pointer
                   "
                 >
                   +
                 </button>
               </div>
 
-              <span className="text-xl font-semibold">
+              <span className="text-xl font-semibold whitespace-nowrap">
                 ${(quantity * price).toFixed(2)}
               </span>
-              {/* Add to Cart */}
- <button
-  className="
-    min-h-[48px]
-    min-w-[140px]
-
-    px-4 sm:px-6
-    py-3
-
-    rounded-[14px]
-
-    bg-[#BE968E]
-    hover:bg-[#89716c]
-
-    text-white text-sm sm:text-base font-medium
-    whitespace-nowrap
-
-    flex items-center justify-center gap-2
-    shadow
-
-    transition
-    active:scale-95
-  "
->
-  Add To Cart
-  <Handbag className="w-4 h-4 sm:w-5 sm:h-5" />
-</button>
-
-
             </div>
+
+            {/* Add to Cart */}
+            <button
+              className="
+                w-full lg:w-auto  
+                cursor-pointer
+                min-h-[48px]
+                min-w-[140px]
+                px-4 sm:px-6
+                py-3
+                rounded-[14px]
+                bg-[#BE968E]
+                hover:bg-[#89716c]
+                text-white text-sm sm:text-base font-medium
+                whitespace-nowrap
+                flex items-center justify-center gap-2
+                shadow
+                transition
+                active:scale-95
+              "
+            >
+              Add To Cart
+              <Handbag className="w-4 h-4 sm:w-5 sm:h-5" />
+            </button>
+
+          </div>
+
           </div>
         </div>
       </div>

@@ -188,10 +188,10 @@ export default function SimilarItems() {
 
       {/* Navigation */}
       <div className="flex justify-center gap-4 mt-10">
-        <button className="similar-prev w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center">
+        <button className="cursor-pointer similar-prev w-12 h-12 rounded-full bg-gray-100 flex items-center justify-center">
           <ChevronLeft />
         </button>
-        <button className="similar-next w-12 h-12 rounded-full bg-[#BE968E] text-white flex items-center justify-center">
+        <button className="cursor-pointer similar-next w-12 h-12 rounded-full bg-[#BE968E] text-white flex items-center justify-center">
           <ChevronRight />
         </button>
       </div>
