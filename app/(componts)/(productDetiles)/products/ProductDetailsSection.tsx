@@ -252,30 +252,33 @@ export default function ProductDetailsPage() {
                 ${(quantity * price).toFixed(2)}
               </span>
               {/* Add to Cart */}
-             <button
-              className="
-                min-h-[48px]
-                min-w-[70px]
+ <button
+  className="
+    min-h-[48px]
+    min-w-[140px]
 
-                px-6
-                
-                rounded-[14px]
+    px-4 sm:px-6
+    py-3
 
-                bg-[#BE968E]
-                hover:bg-[#89716c]
+    rounded-[14px]
 
-                text-white text-base font-medium
+    bg-[#BE968E]
+    hover:bg-[#89716c]
 
-                flex items-center justify-center gap-2
-                shadow
+    text-white text-sm sm:text-base font-medium
+    whitespace-nowrap
 
-                transition
-                active:scale-95
-              "
-            >
-              Add To Cart
-              <Handbag className="w-5 h-5" />
-            </button>
+    flex items-center justify-center gap-2
+    shadow
+
+    transition
+    active:scale-95
+  "
+>
+  Add To Cart
+  <Handbag className="w-4 h-4 sm:w-5 sm:h-5" />
+</button>
+
 
             </div>
           </div>
