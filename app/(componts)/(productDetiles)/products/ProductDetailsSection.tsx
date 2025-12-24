@@ -260,9 +260,9 @@ export default function ProductDetailsPage() {
                 cursor-pointer
                 min-h-[48px]
                 min-w-[140px]
-                px-4 sm:px-6
+                px-8 sm:px-8
                 py-3
-                rounded-[14px]
+                rounded-lg
                 bg-[#BE968E]
                 hover:bg-[#89716c]
                 text-white text-sm sm:text-base font-medium
