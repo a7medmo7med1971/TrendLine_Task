@@ -120,7 +120,7 @@ export default function Rating() {
       </div>
 
       {/* Reviews */}
-      <div className="w-full max-w-[1500px] mx-auto space-y-5 pt-20">
+      <div className="w-full max-w-[1500px] mx-auto space-y-5 pt-10">
         {reviewsClient.map((review) => (
           <div key={review.id} className="border-b border-gray-200 pb-6">
             <div className="flex justify-between mb-3">

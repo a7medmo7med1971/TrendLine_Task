@@ -255,10 +255,10 @@ export default function ProductDetailsPage() {
              <button
               className="
                 min-h-[48px]
-                min-w-[160px]
+                min-w-[70px]
 
                 px-6
-                py-4
+                
                 rounded-[14px]
 
                 bg-[#BE968E]
