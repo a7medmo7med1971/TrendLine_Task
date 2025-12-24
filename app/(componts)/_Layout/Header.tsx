@@ -79,7 +79,7 @@ export default function Header() {
             </Link>
 
             <Link
-              href="/categories"
+              href="/"
               className="flex items-center gap-2 hover:text-yellow-900 transition"
             >
               <LayoutGrid className="h-4 w-4" />
@@ -87,7 +87,7 @@ export default function Header() {
             </Link>
 
             <Link
-              href="/about"
+              href="/"
               className="flex items-center gap-2 hover:text-yellow-900 transition"
             >
               <Info className="h-4 w-4" />
@@ -95,7 +95,7 @@ export default function Header() {
             </Link>
 
             <Link
-              href="/contact"
+              href="/"
               className="flex items-center gap-2 hover:text-yellow-900 transition"
             >
               <Phone className="h-4 w-4" />
@@ -103,7 +103,7 @@ export default function Header() {
             </Link>
 
             <Link
-              href="/faqs"
+              href="/"
               className="flex items-center gap-2 hover:text-yellow-900 transition"
             >
               <HelpCircle className="h-4 w-4" />
@@ -225,7 +225,7 @@ export default function Header() {
                 </Link>
 
                 <Link
-                  href="/about"
+                  href="/"
                   className="flex items-center gap-2 hover:text-yellow-900 transition"
                 >
                   <Info className="h-5 w-5" />
@@ -241,7 +241,7 @@ export default function Header() {
                 </Link>
 
                 <Link
-                  href="/contact"
+                  href="/"
                   className="flex items-center gap-2 hover:text-yellow-900 transition"
                 >
                   <Phone className="h-5 w-5" />
@@ -249,7 +249,7 @@ export default function Header() {
                 </Link>
 
                 <Link
-                  href="/faqs"
+                  href="/"
                   className="flex items-center gap-2 hover:text-yellow-900 transition"
                 >
                   <HelpCircle className="h-5 w-5" />
