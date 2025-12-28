@@ -7,10 +7,13 @@ import Link from "next/link";
 import * as Yup from "yup";
 import { useEffect } from "react";
 import toast from "react-hot-toast";
+import { useRouter } from "next/navigation";
+
 
 
 export default function Register() {
   const dispatch = useDispatch<AppDispatch>();
+  const router=useRouter()
   const { loading, error, success } = useSelector(
     (state: RootState) => state.register
   );
@@ -60,6 +63,7 @@ const registerSchema = Yup.object({
   if (success) {
     toast.dismiss();
     toast.success(success);
+    router.push("/Verify");
   }
 
   if (error) {
@@ -197,7 +201,7 @@ const registerSchema = Yup.object({
               </p>
             )}
         </div>
-          <Link href={"/Verify"}>
+          
         <button
           type="submit"
           disabled={loading}
@@ -205,7 +209,7 @@ const registerSchema = Yup.object({
         >
           {loading ? "Creating account..." : "Sign in"}
         </button>
-          </Link>
+       
         <p className="mt-6 text-center text-sm">
          Already have an account?{" "}
           <Link href="/Login" className="text-[#BE968E]">
