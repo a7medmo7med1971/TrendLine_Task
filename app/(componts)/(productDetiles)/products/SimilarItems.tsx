@@ -133,8 +133,13 @@ export default function SimilarItems() {
                     <ShoppingBag className="w-5 h-5 text-[#BE968E]" />
                   </button>
                   <button className="w-9 h-9 bg-white rounded-lg flex items-center justify-center shadow">
-                    <Heart className="w-5 h-5 text-[#BE968E]" />
-                  </button>
+  <Heart
+    className={`w-5 h-5 ${
+      product.badges.includes("favorite") ? "text-black fill-black" : "text-[#BE968E]"
+    }`}
+  />
+</button>
+
                 </div>
               </div>
 
