@@ -28,7 +28,6 @@ const colors = [
 const thumbnails = [
   { id: 1, image: "/assets/image1.png" },
   { id: 2, image: "/assets/image2.png" },
-  { id: 3, image: "/assets/image3.png" },
   { id: 4, image: "/assets/image3.png", extra: "+2" },
 ];
 
@@ -49,12 +48,12 @@ export default function ProductDetailsPage() {
     setCurrentImage((prev) => (prev === 0 ? thumbnails.length - 1 : prev - 1));
 
   return (
-    <section className="max-w-7xl mx-auto px-4 py-12">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+    <section className="max-w-6xl mx-auto px-4 py-12">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-0">
         {/* ================= LEFT / IMAGES ================= */}
-        <div className="space-y-4">
+        <div className="space-y-4 ">
           {/* Main Image */}
-          <div className="relative aspect-[4/5] rounded-2xl bg-gray-100 overflow-hidden">
+          <div className="relative  rounded-[24px] bg-gray-100 overflow-hidden max-w-[524px] h-[565px]">
             <Image
               src={thumbnails[currentImage].image}
               alt="Product Image"
@@ -80,7 +79,7 @@ export default function ProductDetailsPage() {
           </div>
 
           {/* Thumbnails */}
-          <div className="grid grid-cols-4 gap-3">
+          <div className="grid grid-cols-3 gap-[8px] max-w-[524px] max-h-[183px]">
             {thumbnails.map((thumb, index) => (
               <button
                 key={thumb.id}
@@ -107,7 +106,7 @@ export default function ProductDetailsPage() {
         </div>
 
         {/* ================= RIGHT / INFO ================= */}
-        <div className="space-y-6">
+        <div className="space-y-6 lg:space-y-4 ">
           {/* Header */}
           <div className="flex items-start justify-between">
             <span className="px-4 py-3 rounded-full border border-[#BE968E] text-[14px] font-Poppins text-[#BE968E]">
@@ -130,19 +129,24 @@ export default function ProductDetailsPage() {
           </h1>
 
           {/* Price */}
-          <div className="flex items-center gap-3">
-            <span className="text-2xl font-bold">${price.toFixed(2)}</span>
-            <span className="line-through text-gray-400">
-              ${oldPrice.toFixed(2)}
-            </span>
-          </div>
+         <div className="flex flex-col gap-1">
+        <div className="flex items-center gap-3">
+          <span className="text-2xl font-bold">${price.toFixed(2)}</span>
+          <span className="line-through text-gray-400">
+            ${oldPrice.toFixed(2)}
+          </span>
+        </div>
 
-          <p className="text-sm text-gray-500">
-            This price is exclusive of taxes.
-          </p>
+        <p className="text-sm text-gray-500">
+          This price is exclusive of taxes.
+        </p>
+      </div>
+
+
+          
 
           {/* Description */}
-          <p className=" text/black-500 text-sm">
+          <p className=" text/black-500 w-[524px] h-[72px]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam
             nonummy.
           </p>
@@ -188,23 +192,38 @@ export default function ProductDetailsPage() {
           </div>
 
           {/* Colors */}
-          <div>
-            <p className="font-medium mb-2">Colors</p>
-            <div className="flex gap-3">
-              {colors.map((c) => (
-                <button
-                  key={c.value}
-                  onClick={() => setSelectedColor(c.value)}
-                  className={`h-10 w-10 rounded-full  cursor-pointer ${c.bg} ${
-                    selectedColor === c.value
-                      ? "ring-2 ring-black ring-offset-2"
-                      : ""
-                  }`}
-                />
-              ))}
-            </div>
-            <p className="text-sm mt-2 capitalize">{selectedColor}</p>
-          </div>
+         <div>
+  <p className="font-medium mb-3">Colors</p>
+
+  <div className="flex gap-[16px]">
+    {colors.map((c) => {
+      const isSelected = selectedColor === c.value;
+
+      return (
+        <button
+          key={c.value}
+          onClick={() => setSelectedColor(c.value)}
+          className={`
+            flex items-center justify-center
+            h-[60px] w-[60px] rounded-[50px]
+            border-[1.5px]
+            bg-[#F5F5F5]
+            ${isSelected ? "border-[#020202] w-[1.5px]" : "border-[#F5F5F5]"}
+            cursor-pointer
+          `}
+        >
+          <span
+            className={`
+              h-[32px] w-[32px] rounded-[57px] ${c.bg}
+              ${isSelected ? "opacity-100" : "opacity-80"}
+            `}
+          />
+        </button>
+      );
+    })}
+  </div>
+</div>
+
 
           {/* Quantity */}
           <div>
@@ -215,10 +234,10 @@ export default function ProductDetailsPage() {
               </span>
             </p>
 
-           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-10">
+           <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4 lg:gap-28">
             {/* Quantity + Price */}
-            <div className="flex items-center gap-10">
-              <div className="flex items-center gap-2 rounded-xl bg-[#F6F6F6] px-2 py-1">
+            <div className="flex items-center gap-5">
+              <div className="flex items-center gap-1 rounded-xl bg-[#F6F6F6] px-2 py-1">
                 <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
                   className="
@@ -259,9 +278,10 @@ export default function ProductDetailsPage() {
                 w-full lg:w-auto  
                 cursor-pointer
                 min-h-[48px]
-                min-w-[140px]
+                min-w-[200px]
                 px-8 sm:px-8
                 py-3
+                
                 rounded-lg
                 bg-[#BE968E]
                 hover:bg-[#89716c]

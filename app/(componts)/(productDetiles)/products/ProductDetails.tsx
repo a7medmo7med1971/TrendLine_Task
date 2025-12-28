@@ -29,7 +29,7 @@ export default function ProductDetails() {
         <h3 className="font-semibold text-xl sm:text-3xl">Product Details</h3>
       </div>
       {/* ===== Breadcrumb ===== */}
-      <div className="mx-auto max-w-7xl px-4 mt-8">
+      <div className=" mx-auto max-w-6xl px-4 mt-8">
         <div className="rounded-xl bg-[#ECECEC66] px-6 py-4  flex items-center gap-2 text-sm font-medium">
           <Link
             href="/"

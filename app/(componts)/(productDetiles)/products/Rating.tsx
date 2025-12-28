@@ -47,7 +47,7 @@ const reviewsClient = [
 
 export default function Rating() {
   return (
-    <div className="max-w-[1440px] mx-auto px-6 sm:px-8 lg:px-12 pt-24">
+    <div className="max-w-6xl mx-auto px-6 sm:px-8 lg:px-12 pt-24">
       {/* Title */}
       <div className="mb-6">
         <h2 className="text-xl sm:text-2xl font-bold">Rating & Reviews</h2>
@@ -59,7 +59,7 @@ export default function Rating() {
 
   {/* Score */}
   <div className="flex flex-col items-center lg:items-start lg:flex-1">
-    <div className="flex items-baseline gap-8">
+    <div className="flex items-baseline gap-5">
       <span
         className="
           text-[96px]
@@ -78,7 +78,7 @@ export default function Rating() {
   </div>
 
   {/* Bars */}
-  <div className="w-full lg:flex-1 max-w-none space-y-3">
+  <div className="w-full lg:flex-2 lg:max-w-[500px] max-w-none space-y-3">
     {ratingData.map((rating) => (
       <div key={rating.stars} className="flex items-center gap-3">
         <Star className="text-[#BE968E]" fill="#BE968E" />
@@ -101,7 +101,7 @@ export default function Rating() {
   {/* Total */}
   <div className="hidden lg:flex flex-col items-center gap-5 lg:flex-1">
     <div className="text-center">
-      <p className="text-sm text-[#545454] mb-2">Total Reviews</p>
+      <p className="text-[16px] text-[#545454] mb-2 font-Poppins">Total Reviews</p>
       <p className="text-6xl font-semibold">3.0K</p>
     </div>
 
@@ -136,14 +136,14 @@ export default function Rating() {
               </div>
               <span className="text-sm text-[#545454]">{review.date}</span>
             </div>
-            <p className="text-[#020202] text-sm">{review.comment}</p>
+            <p className="text-[#020202] font-Poppins text-sm">{review.comment}</p>
           </div>
         ))}
 
         <div className="flex justify-center pt-6">
           <Button
             variant="outline"
-            className="bg-[#F5F5F5] px-8 py-6 rounded-lg cursor-pointer"
+            className="bg-[#F5F5F5] px-8 py-6 rounded-lg cursor-pointer text-[#BE968E]"
           >
             View More Comments
           </Button>

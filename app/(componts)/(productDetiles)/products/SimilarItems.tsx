@@ -88,7 +88,7 @@ const products = [
 
 export default function SimilarItems() {
   return (
-    <section className="max-w-[1440px] mx-auto px-6 py-16">
+    <section className="max-w-6xl mx-auto px-6 py-16">
       {/* Header */}
       <div className="mb-10">
         <h2 className="text-2xl font-semibold">Similar Items</h2>
@@ -110,9 +110,9 @@ export default function SimilarItems() {
       >
         {products.map((product) => (
           <SwiperSlide key={product.id}>
-            <div className="group bg-white rounded-2xl overflow-hidden border hover:shadow-lg transition">
+            <div className="group bg-white rounded-xl overflow-hidden border hover:shadow-lg transition">
               {/* Image */}
-              <div className="relative aspect-square bg-gray-50">
+              <div className="relative aspect-square ">
                 <Image
                   src={product.image}
                   fill
