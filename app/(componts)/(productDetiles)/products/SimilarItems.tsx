@@ -8,7 +8,22 @@ import "swiper/css";
 import "swiper/css/navigation";
 import Image from "next/image";
 
-const products = [
+type Product = {
+  id: number;
+  category: string;
+  title: string;
+  price: number;
+  oldPrice: number | null;
+  discount: string | null;
+  rating: number;
+  reviews: number;
+  image: string;
+  colors: string[];
+  hasMoreColors: number;
+  badges: string[];
+};
+
+  const products: Product[]= [
   {
     id: 1,
     badges: ["favorite"],
