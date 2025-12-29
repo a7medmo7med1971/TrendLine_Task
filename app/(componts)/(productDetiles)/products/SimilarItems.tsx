@@ -1,9 +1,7 @@
 "use client";
-
 import { Heart, ShoppingBag, ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
-
 import "swiper/css";
 import "swiper/css/navigation";
 import Image from "next/image";

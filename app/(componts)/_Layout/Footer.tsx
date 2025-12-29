@@ -104,11 +104,11 @@ export default function Footer() {
           </div>
 
           {/* Email + Social */}
-          <div className="max-w-md w-full">
+          <div className=" max-w-[369px] lg:max-w-[369px]">
             <h4 className="text-lg font-semibold mb-5">Send Email</h4>
 
             {/* Email */}
-            <div className="flex gap-2 mb-6 bg-white border border-black/10 rounded-lg p-1.5">
+            <div className="flex gap-2 mb-6  bg-white border border-black/10 rounded-lg p-1.5">
               <input
                 type="email"
                 placeholder="Email address"
