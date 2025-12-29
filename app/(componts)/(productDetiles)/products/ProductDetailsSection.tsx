@@ -146,7 +146,7 @@ export default function ProductDetailsPage() {
           
 
           {/* Description */}
-          <p className=" text/black-500 w-[524px] h-[72px]">
+          <p className=" text/black-500 max-w-[524px] h-[72px]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed diam
             nonummy.
           </p>
@@ -207,6 +207,7 @@ export default function ProductDetailsPage() {
             flex items-center justify-center
             h-[60px] w-[60px] rounded-[50px]
             border-[1.5px]
+            lg:rounded-full
             bg-[#F5F5F5]
             ${isSelected ? "border-[#020202] w-[1.5px]" : "border-[#F5F5F5]"}
             cursor-pointer
@@ -281,7 +282,6 @@ export default function ProductDetailsPage() {
                 min-w-[200px]
                 px-8 sm:px-8
                 py-3
-                
                 rounded-lg
                 bg-[#BE968E]
                 hover:bg-[#89716c]
