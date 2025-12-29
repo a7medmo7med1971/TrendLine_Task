@@ -51,7 +51,7 @@ export default function Footer() {
 
       {/* Content */}
       <div className="relative z-20 max-w-[1400px] mx-auto px-16 sm:px-10 lg:px-16 pt-16 pb-14">
-        <div className="flex flex-col xl:flex-row justify-center gap-15">
+        <div className="flex flex-col xl:flex-row justify-between gap-5">
           {/* Logo + Description */}
           <div className="max-w-sm">
             <Image
