@@ -50,8 +50,8 @@ export default function Footer() {
       <div className="absolute inset-0 bg-black/70 z-10" />
 
       {/* Content */}
-      <div className="relative z-20 max-w-[1400px] mx-auto px-16 sm:px-10 lg:px-16 pt-16 pb-14">
-        <div className="flex flex-col xl:flex-row justify-between gap-5">
+      <div className="relative z-20 max-w-[1400px] mx-auto px-4 sm:px-6 md:px-10 lg:px-16 pt-16 pb-14">
+        <div className="flex flex-col xl:flex-row justify-center gap-10 ">
           {/* Logo + Description */}
           <div className="max-w-sm">
             <Image
@@ -104,7 +104,7 @@ export default function Footer() {
           </div>
 
           {/* Email + Social */}
-          <div className=" max-w-[369px] lg:max-w-[369px]">
+          <div className=" max-w-[369px] ">
             <h4 className="text-lg font-semibold mb-5">Send Email</h4>
 
             {/* Email */}
@@ -112,9 +112,20 @@ export default function Footer() {
               <input
                 type="email"
                 placeholder="Email address"
-                className="flex-1 px-3 text-sm text-gray-800 bg-transparent focus:outline-none"
+                className="flex-1 px-1 text-sm text-gray-800 bg-transparent focus:outline-none "
               />
-              <button className="px-6 py-2 bg-[#C4A39A] hover:bg-[#b79288] rounded-lg text-white text-sm font-medium transition">
+              <button className="  shrink-0
+                px-4 sm:px-6
+                h-10 sm:h-11
+                bg-[#C4A39A]
+                hover:bg-[#b79288]
+                rounded-lg
+                text-white
+                text-sm
+                font-medium
+                transition
+                flex items-center justify-center
+                whitespace-nowrap">
                 Send
               </button>
             </div>
