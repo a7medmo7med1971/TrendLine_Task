@@ -11,6 +11,7 @@ import Image from "next/image";
 const products = [
   {
     id: 1,
+    badges: ["favorite"],
     category: "Dresses",
     title:
       "J.VER Women's Dress Shirts Solid Long Sleeve Stretch Wrinkle-Free With Yello ..",
@@ -22,7 +23,7 @@ const products = [
     image: "/assets/image-slider1.png",
     colors: ["#D4A5A5", "#2C2C2C", "#F5F5F5"],
     hasMoreColors: 2,
-    badges: [],
+   
   },
   {
     id: 2,
@@ -133,13 +134,14 @@ export default function SimilarItems() {
                     <ShoppingBag className="w-5 h-5 text-[#BE968E]" />
                   </button>
                   <button className="w-9 h-9 bg-white rounded-lg flex items-center justify-center shadow">
-  <Heart
-    className={`w-5 h-5 ${
-      product.badges.includes("favorite") ? "text-black fill-black" : "text-[#BE968E]"
-    }`}
-  />
-</button>
-
+                      <Heart
+                    className={`w-5 h-5 transition ${
+                      product.badges?.includes("favorite")
+                        ? "text-black fill-black"
+                        : "text-[#BE968E]"
+                    }`}
+                  />
+                </button>
                 </div>
               </div>
 
